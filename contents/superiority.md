@@ -7,4 +7,4 @@
 3. 四大库：spark streaming、spark sql、spark MLlib、spark graphx 极大程度方便开发者在大数据处理方面的不同需求。
 4. 数据恢复机制减轻了开发者在Hadoop MapReduce中运行失败的痛苦。
 
-简单来说，spark是一个更快更友好的计算框架，这就是业界相比Hadoop更偏好它的原因。
+简单来说，spark是一个更快更友好的计算框架，这就是业界相比Hadoop MapRedcue更偏好它的原因。
