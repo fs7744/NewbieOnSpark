@@ -19,12 +19,12 @@
     
  2. 安装spark docker 镜像
     
-    1) docker pull sequenceiq/spark:1.3.1
+    1) docker pull sequenceiq/spark:1.3.1 获取镜像
     
-    2) docker build --rm -t sequenceiq/spark:1.3.1
+    2) docker run -i -t -h sandbox sequenceiq/spark:1.3.1 bash 运行镜像
     
-    3)    
+    3) spark-shell --master yarn-client --driver-memory 1g --executor-memory 1g --executor-cores 1  （YARN-client mode）
 
-    参考 https://github.com/sequenceiq/docker-spark 
+    spark docker 使用参考 https://github.com/sequenceiq/docker-spark 
     
-    可惜国内网络问题，没有用vpn的话，失败率极高, 我是搞了整整一天才下好，唉
+总体而言，该镜像应该是最方便的尝试spark方式了，可惜国内网络问题，没有用vpn的话，下载失败率极高, 我是搞了整整一天才下好，唉
