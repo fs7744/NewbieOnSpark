@@ -13,5 +13,18 @@
     这个地址有各个系统的docker安装指南： https://docs.docker.com/installation/#installation     
     我使用的是window，所以简单的执行 docker-install.exe 就可以装好。
     
+    一个坑：我装好后，virtual box 的 docker 镜像默认设置是使用 Intel VT-x，我电脑是不支持这个的，得在virtual box 的 docker 镜像设置中启用图中设置才能启动docker
     
- 2. 
+    ![](docker-vm-setting.png)
+    
+ 2. 安装spark docker 镜像
+    
+    1) docker pull sequenceiq/spark:1.3.1
+    
+    2) docker build --rm -t sequenceiq/spark:1.3.1
+    
+    3)    
+
+    参考 https://github.com/sequenceiq/docker-spark 
+    
+    可以国内网络问题，没有用vpn的话，失败率极高, 我是搞了整整一天
