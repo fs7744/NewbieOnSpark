@@ -4,9 +4,37 @@
 
     个人打算使用scala学习spark，scala 常用的IDE有:
     
-    1) IntelliJ IDEA
+    1) IntelliJ IDEA : https://www.jetbrains.com/idea/download/
     
-    2) scala IDE
+    2) scala IDE : http://scala-ide.org/ 
 
+    个人偏向 IntelliJ IDEA的，所以我会使用IntelliJ IDEA 进行教程。
+2. 安装 scala
     
-2. 
+    1) 安装 scala ：http://www.scala-lang.org/download/
+    
+    2）安装 IntelliJ IDEA scala 插件 ：
+
+    File -> Settings -> Plugins -> Install Jet brains plugin -> search scala -> install
+    
+3. 安装 sbt 
+    
+    sbt 地址 ：http://www.scala-sbt.org/ 
+
+4. 使用 IntelliJ IDEA 创建一个 sbt 项目
+    
+    ![创建新项目](development_sbt.JPG)
+
+    ![设置项目](development_sbt2.PNG)
+    
+    在 build.sbt 加入包依赖
+    
+    libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "1.3.1"
+    
+    ![添加依赖](development_sbt3.PNG)
+    
+    然后等待包下载完毕
+
+6. 可以开始coding了
+
+    spark 官方教程 ： https://spark.apache.org/docs/latest/programming-guide.html
