@@ -36,5 +36,20 @@
     然后等待包下载完毕
 
 6. 可以开始coding了
-
+    
+    可以使用如下代码测试搭建是否成功
+```
+    import org.apache.spark._
+    
+    object testa {
+    
+      def main(argment: Array[String]): Unit = {
+        val conf = new SparkConf().setAppName("test").setMaster("local")
+        val sc = new SparkContext(conf)
+        val distData = sc.parallelize(1 to 1000)
+        println(distData.count())
+        sc.stop()
+      }
+    }
+```
     spark 官方教程 ： https://spark.apache.org/docs/latest/programming-guide.html
