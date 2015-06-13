@@ -15,7 +15,7 @@ spark支持基本读取方式有 ：
 
 PS：文件必须保证worker nodes 能访问，否则节点到哪去给您找文件啊？
 
-spark在1.3之后，即推出dataframe之后，spark sql 库中支持以下几种方式：
+spark在1.3之后，即推出dataframe之后，spark sql 库中支持以下几种方式读取数据：
 1. Parquet Files
 2. JSON 
 3. Hive Tables
