@@ -15,6 +15,6 @@ val pc = sc.parallelize(Array(1,2,3))
 ```
 
 既然是并行集合，那么这个集合被分成几份将是影响并行集合性能的关键因素，spark中将其称为切片数。spark会在每个切片区使用一个任务做处理(并行处理的普遍做法)。通常spark会自动根据集群情况设置分片数，除非你手动设置parallelize方法的第二个参数,比如：
-```
+```Scala
 val pc = sc.parallelize(Array(1,2,3,5,4,3), 2)
 ```
