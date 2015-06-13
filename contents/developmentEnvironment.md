@@ -39,7 +39,7 @@
     
     可以使用如下代码测试搭建是否成功
 
-```
+```Scala
     import org.apache.spark._
     
     object testa {
