@@ -10,7 +10,7 @@
 
 创建并行集合的方式：
 
-```
+```Scala
 val pc = sc.parallelize(Array(1,2,3))
 ```
 
