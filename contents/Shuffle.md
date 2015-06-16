@@ -8,3 +8,10 @@ Shuffle是MapReduce框架中的一个特定的阶段，介于Map阶段和Reduce 
 
 ![spark-shuffle](spark-shuffle.png)
 
+很多时候一些性能问题都是shuffle这里出现的，比如因为任务执行的数据集过大而导致shuffle为每一个任务所创建哈希表变非常大，以至于无法加载到内存中，出现OutOfMemory 的错误。
+
+两个很详细说明shuffle在spark和haddopp的区别的文章，要详细了解shuffle请仔细阅读：
+
+http://jerryshao.me/architecture/2014/01/04/spark-shuffle-detail-investigation/ 
+
+https://github.com/JerryLead/SparkInternals/blob/master/markdown/4-shuffleDetails.md
