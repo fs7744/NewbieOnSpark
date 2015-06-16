@@ -45,3 +45,11 @@ RDD 有两种操作方式的概念：
 | saveAsObjectFile(path) (Java and Scala) | Write the elements of the dataset in a simple format using Java serialization, which can then be loaded using SparkContext.objectFile(). |
 | countByKey() | Only available on RDDs of type (K, V). Returns a hashmap of (K, Int) pairs with the count of each key. |
 | foreach(func) | Run a function func on each element of the dataset. This is usually done for side effects such as updating an Accumulator or interacting with external storage systems.  **Note**: modifying variables other than Accumulators outside of the foreach() may result in undefined behavior. See Understanding closures for more details. |
+
+## RDD 是惰性的
+
+为了高效计算，RDD 的transformations被设计为惰性(lazy),transformations不会立即执行，只会记录如何操作，直到action时，transformations才会被执行。
+
+默认情况下，每次执行action都会重新计算一次，除非使用persist 或 cache 持久化了RDD。
+
+RDD操作方法支持匿名函数或静态方法，无法在分布式环境传递实例方法。其也支持自定义对象，但自定义对象在作为RDD的key使用时必须确保自定义 equals() 方法和 hashCode() 方法是匹配的。
