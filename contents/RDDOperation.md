@@ -50,6 +50,16 @@ RDD 有两种操作方式的概念：
 
 为了高效计算，RDD 的transformations被设计为惰性(lazy),transformations不会立即执行，只会记录如何操作，直到action时，transformations才会被执行。
 
+例如：
+
+```Scala
+val lines = sc.textFile("data.txt")
+val pairs = lines.map(s => (s, 1))
+val counts = pairs.reduceByKey((a, b) => a + b)
+```
+
+当执行map时，spark并没有生(s,1)这些格式的数据，直到执行reduceByKey时，才开始生成对应的数据。
+
 默认情况下，每次执行action都会重新计算一次，除非使用persist 或 cache 持久化了RDD。
 
 RDD操作方法支持匿名函数或静态方法，无法在分布式环境传递实例方法。其也支持自定义对象，但自定义对象在作为RDD的key使用时必须确保自定义 equals() 方法和 hashCode() 方法是匹配的。
