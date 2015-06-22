@@ -7,3 +7,4 @@
     * [读取外部数据](contents/ExternalDatasets.md)
     * [RDD 操作介绍](contents/RDDOperation.md)
     * [Shuffle 简单介绍](contents/Shuffle.md)
+    * [共享变量](contents/SharedVariables.md)
