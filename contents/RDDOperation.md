@@ -63,3 +63,11 @@ val counts = pairs.reduceByKey((a, b) => a + b)
 默认情况下，每次执行action都会重新计算一次，除非使用persist 或 cache 持久化了RDD。
 
 RDD操作方法支持匿名函数或静态方法，无法在分布式环境传递实例方法。其也支持自定义对象，但自定义对象在作为RDD的key使用时必须确保自定义 equals() 方法和 hashCode() 方法是匹配的。
+
+## RDD 持久化
+
+RDD能通过persist()或者cache()方法持久化。
+
+此外，我们可以利用不同的存储级别存储每一个被持久化的RDD。例如，它允许我们持久化集合到磁盘上、将集合作为序列化的Java对象持久化到内存中、在节点间复制集合或者存储集合到 Tachyon中。我们可以通过传递一个StorageLevel对象给persist()方法设置这些存储级别。cache()方法使用了默认的存储级别—StorageLevel.MEMORY_ONLY。完整的存储级别在之前[RDD概念](http://fs7744.gitbooks.io/newbieonspark/content/contents/RDD.html)部分已经有列出。
+
+Spark自动的监控每个节点缓存的使用情况，利用最近最少使用原则删除老旧的数据。如果你想手动的删除RDD，可以使用RDD.unpersist()方法。
