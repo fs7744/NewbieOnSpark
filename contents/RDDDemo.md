@@ -82,3 +82,26 @@ class ContentRDD(sc : SparkContext,strs: Array[String]) extends RDD[String](sc,N
   }
 }
 ```
+
+好的，我们已经建好了自己的RDD，接下来我们就利用这个RDD做一个字符数量的统计：
+
+```Scala
+object CharDemo {
+  def main(argment: Array[String]): Unit = {
+    countChar(Array[String]("tttf","aad")) //传入我们的数据集合
+  }
+
+  def countChar( strs :Array[String]) :Unit = {
+        val conf = new SparkConf().setAppName("test").setMaster("local") //我们直接在本地调试看这个结果
+        val sc = new SparkContext(conf) //建立spark操作上下文
+        new ContentRDD(sc,strs)                     //建立我们的RDD
+            .flatMap { s => s.map { c => (c, 1) } } // 平展开成每个（char，1）的格式方便统计
+            .reduceByKey((c1,c2) => c1 + c2)        // 统计所有的char
+            .collect()                              // 收集所有结果
+            .foreach(println)                       // 展示结果
+        sc.stop()                                   //停止spark应用
+  }
+}
+```
+
+由这个例子可以看出RDD的自定义和操作都是比较方便的，这也是spark现在比hadoop map reduce 火的一个原因。
