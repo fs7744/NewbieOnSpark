@@ -50,9 +50,9 @@ master参数可以是以下这些形式：
   /path/to/examples.jar 
 ```
 
-官方也给出了这样直接在scala代码中提交应用的例子：
+官方也给出了这样直接在java代码中提交应用的例子：
 
-```Scala
+```Java
 import org.apache.spark.launcher.SparkLauncher;
 
    public class MyLauncher {
