@@ -67,3 +67,5 @@ import org.apache.spark.launcher.SparkLauncher;
      }
    }
 ```
+
+spark 也有类似的类 ：https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.launcher.SparkLauncher
