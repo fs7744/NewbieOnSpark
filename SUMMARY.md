@@ -11,3 +11,4 @@
     * [RDD Demo](contents/RDDDemo.md)
 * [提交spark应用](contents/SubmitSpark.md)
 * [Spark Streaming 介绍](contents/StreamingSummary.md)
+    * [离散流介绍](contents/DStreams.md)  
