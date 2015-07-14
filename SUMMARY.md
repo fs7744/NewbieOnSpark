@@ -10,3 +10,4 @@
     * [共享变量](contents/SharedVariables.md)
     * [RDD Demo](contents/RDDDemo.md)
 * [提交spark应用](contents/SubmitSpark.md)
+* [Spark Stream 介绍](contents/StreamingSummary.md)
