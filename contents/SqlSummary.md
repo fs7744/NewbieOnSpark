@@ -6,3 +6,8 @@ spark团队在经历了shark的惨痛教训后，痛下决心，自行实现了�
 
 Spark Sql 的定位无疑是切合广大开发者，sql语法减少了学习成本，其的优化能力简化了开发者性能调优要求，让开发者不再每句代码都得小心翼翼的。
 
+对hive的支持都移动到了 Hive on Spark中。
+
+![sql-directions.png](sql-directions.png)
+
+个人的观点来说，如果要在spark 上使用sql的方式的话，推荐以spark sql为主，对hive的支持与hive的发展总是有一定差距的。
