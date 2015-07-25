@@ -10,4 +10,13 @@ Spark Sql 的定位无疑是切合广大开发者，sql语法减少了学习成�
 
 ![sql-directions.png](sql-directions.png)
 
-个人的观点来说，如果要在spark 上使用sql的方式的话，推荐以spark sql为主，对hive的支持与hive的发展总是有一定差距的。
+个人的观点来说，如果要在spark 上使用sql的方式的话，推荐以spark sql为主，对hive的支持与hive的发展总是有一定差距的,并且 spark 团队可能会调整Hive的支持代码.
+
+spark sql 代码使用入口依然符合spark的习惯 - context的声明：
+
+```Scala
+val sc: SparkContext // An existing SparkContext.
+val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+```
+
+如果要使用hive的支持,入口只需换为 HiveContext,而不使用SQLContext就行.
