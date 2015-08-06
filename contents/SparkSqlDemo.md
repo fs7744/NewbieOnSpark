@@ -1,6 +1,6 @@
 # Spark Sql Demo 
 
-我们的demo是简单的用sql的方式从csv文件中筛选数据。
+我们的demo是简单的用sql的方式从[csv文件](http://fs7744.gitbooks.io/newbieonspark/content/contents/people.csv)中筛选数据。
 
 ```Scala
 package Demo
