@@ -7,4 +7,4 @@
 3. 本地测试时一定要使用多核心模式，否则多线程问题你是看不出来的，并且单核心真心慢死人
 4. udf function 必须是可序列化到分布式环境的，如果出现无法序列化的问题，多半是你不小心使用了类成员等依赖于某个类的变量或方法，在scala中可放在伴生类中
 5. spark sql StructField 的 DataType 无法转为 DecimalType， 当我们根据 StructField做处理时，DecimalType暂时无处处理
-6. spark sql 的 schemaRDD 实际列少于定义，在运行时会报java.lang.ArrayIndexOutOfBoundsException错误，该异常是不是很好看懂呢？
+6. spark sql 的 schemaRDD 实际列少于定义,比如使用union all 时如果列数不一样，在运行时会报java.lang.ArrayIndexOutOfBoundsException错误，该异常是不是很好看懂呢？
